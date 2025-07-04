@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdoul Kadre WANE – Créateur du Futur</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div style="position: fixed; top: 10px; right: 10px;">
+  <button onclick="switchLang()">FR / EN</button>
+</div>
+<script>
+function switchLang() {
+  const fr = {
+    hero: "Je suis Abdoul Kadre Wane — Créateur du Futur.",
+    contact: "Me contacter"
+  };
+  const en = {
+    hero: "I am Abdoul Kadre Wane — Creator of the Future.",
+    contact: "Contact me"
+  };
+  const current = document.getElementById("heroTitle").textContent.includes("Je suis") ? "en" : "fr";
+  document.getElementById("heroTitle").textContent = current === "fr" ? en.hero : fr.hero;
+  document.querySelector(".hero-buttons a:last-child").textContent = current === "fr" ? en.contact : fr.contact;
+}
+</script>
+
+
+<div id="loading">
+  <div class="spinner"></div>
+  <p>Chargement en cours...</p>
+</div>
+
+  
+<header>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="about.html">À propos</a>
+    <a href="projects.html">Projets</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <img src="https://robohash.org/abdoulwane?set=set5&size=200x200" alt="Abdoul Avatar" class="avatar">
+      <h1 id="heroTitle"></h1>
+      <p>Je suis Abdoul Kadre Wane — Créateur du Futur.</p>
+      <div class="hero-buttons">
+        <a href="projects.html">Voir mes projets</a>
+        <a href="contact.html">Me contacter</a>
+      </div>
+    </div>
+  </section>
+  
+<footer>
+  <p>© 2025 Abdoul Kadre WANE. Tous droits réservés.</p>
+</footer>
+
+  <script>
+    const text = "Je suis Abdoul Kadre Wane — Créateur du Futur.";
+    let i = 0;
+    const target = document.getElementById("heroTitle");
+    function type() {
+      if (i < text.length) {
+        target.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, 50);
+      }
+    }
+    type();
+  </script>
+
+<script>
+window.addEventListener('load', function () {
+  document.getElementById('loading').style.display = 'none';
+});
+</script>
+</body>
+
+</html>
